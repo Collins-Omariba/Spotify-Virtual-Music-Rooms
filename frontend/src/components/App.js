@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import { render } from "react-dom";
+import HomePage from './HomePage';
+
 
 export default class App extends Component {
   constructor(props) {
@@ -9,7 +11,7 @@ export default class App extends Component {
   render() {
     return (
       <div>
-        <h1>Ola</h1>
+       <HomePage/>
       </div>
     );
   }
