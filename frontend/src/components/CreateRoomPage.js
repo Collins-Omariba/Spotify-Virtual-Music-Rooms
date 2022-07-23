@@ -14,7 +14,6 @@ import { TextField } from '@material-ui/core'
 
 
 class CreateRoomPage extends Component {
-
   defaultVotes = 1
 
     constructor(props) {
@@ -52,7 +51,7 @@ class CreateRoomPage extends Component {
       }
       fetch('/api/create-room', requestOptions)
       .then((response) => response.json())
-      .then((data) => console.log(data))
+      .then((data) => this.props.history.push('/room/' + data.code))
     }
   render() {
     return (

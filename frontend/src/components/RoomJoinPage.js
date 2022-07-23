@@ -8,7 +8,9 @@ class RoomJoinPage extends Component {
     
   render() {
     return (
-      <div>RoomJoinPage</div>
+      <div>
+        <h1>Join room</h1>
+      </div>
     )
   }
 }
