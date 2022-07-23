@@ -23,7 +23,7 @@ class HomePage extends Component {
       
           <Route path='/join' component={RoomJoinPage}></Route>
 
-          <Route path='/room/roomCode' component={Room}></Route>
+          <Route path='/room/:roomCode' component={Room}></Route>
         
         </Switch>
       </Router>

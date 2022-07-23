@@ -1,5 +1,6 @@
 import React, { Component} from 'react'
 
+
 class Room extends Component {
     constructor(props) {
       super(props)
@@ -13,7 +14,8 @@ class Room extends Component {
     }
 
     getRoomDetails(){
-        fetch('/api/get-room' + '?code=' + this.roomCode).then((response) => response.json())
+        fetch('/api/get-room' + '?code=' + this.roomCode)
+        .then((response) => response.json())
         .then((data) => {
             this.setState({
                 votesToSkip: data.votes_to_skip,
@@ -26,7 +28,7 @@ class Room extends Component {
     return (
       <div>
         <h3>ROOM CODE: {this.roomCode}</h3>
-        <p>VOTES: {this.state.votesToSkip}</p>
+        <p>VOTES: {this.state.votesToSkip.toString()}</p>
         <p>GUEST CAN PAUSE: {this.state.guestCanPause.toString()}</p>
         <p>HOST: {this.state.isHost.toString()}</p>
       </div>
