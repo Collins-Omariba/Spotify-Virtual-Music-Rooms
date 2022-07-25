@@ -3,21 +3,53 @@ import {BrowserRouter as Router, Route, Switch, Link, Redirect} from "react-rout
 import CreateRoomPage from './CreateRoomPage';
 import Room from './Room';
 import RoomJoinPage from './RoomJoinPage';
-
+import {Grid, Button, ButtonGroup, Typography} from '@material-ui/core'
 
 class HomePage extends Component {
   constructor(props) {
     super(props)
-  
+    this.state = {
+      roomCode: null, 
+    }
+  }
+
+  async componentDidMount(){
+    fetch('/api/user-in-room')
+    .then((response) => response.json())
+    .then((data) => {
+      this.setState({
+        roomCode: data.code 
+      })
+    })
+
+  }
+
+  renderHomePage(){
+    return(
+      <Grid container spacing={3} align='center'>
+        <Grid item xs={12}>
+          <Typography variant='h3' compact='h3'>
+            MUSIFY
+          </Typography>
+        </Grid>
+        <Grid item xs={12}>
+            <ButtonGroup disableElevation variant='contained' color='primary'>
+              <Button color='primary' to='/join' component={ Link }>Join A Room</Button>
+              <Button color='secondary' to='/create' component={ Link }>Create A Room</Button>
+            </ButtonGroup>
+        </Grid>
+      </Grid>
+    )
   }
   render() {
     return (
       
       <Router>
         <Switch>
-          <Route exact path='/' >
-            <p>This is the homepage</p>
-            </Route>
+          <Route exact path='/'  render={() => {
+            return this.state.roomCode ? (< Redirect to ={ `/room/${this.state.roomCode}`}/>) : this.renderHomePage()
+          }}/>
+            
 
           <Route path='/create' component={CreateRoomPage}></Route>
       
