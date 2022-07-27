@@ -1,4 +1,5 @@
 from dataclasses import fields
+from wsgiref.validate import validator
 from rest_framework import serializers 
 from .models import Room
 
@@ -12,3 +13,14 @@ class CreateRoomSerializer(serializers.ModelSerializer):
     class Meta:
         model = Room
         fields = ('guest_can_pause', 'votes_to_skip')
+
+
+class UpdateRoomSerializer(serializers.ModelSerializer):
+
+    code = serializers.CharField(validators=[])
+    class Meta:
+        model = Room
+        fields = ('guest_can_pause', 'votes_to_skip', 'code')
+
+
+
