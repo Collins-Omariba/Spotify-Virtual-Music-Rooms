@@ -38,7 +38,7 @@ export default class RoomJoinPage extends Component {
             color="primary"
             onClick={this.roomButtonPressed}
           >
-            Enter Room
+            Enter A Room
           </Button>
         </Grid>
         <Grid item xs={12} align="center">

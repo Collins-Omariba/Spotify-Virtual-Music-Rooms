@@ -16,7 +16,7 @@ class CreateRoomSerializer(serializers.ModelSerializer):
 
 
 class UpdateRoomSerializer(serializers.ModelSerializer):
-
+    
     code = serializers.CharField(validators=[])
     class Meta:
         model = Room

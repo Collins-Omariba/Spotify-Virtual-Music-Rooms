@@ -117,15 +117,18 @@ class UpdateRoom(APIView):
             self.request.session.create()
 
         serializer = self.serializer_class(data=request.data)
+        
+        
 
-        if serializer .is_valid():
-            guest_can_pause = serializer.data.get('get_can_pause')
+        if serializer.is_valid():
+            guest_can_pause = serializer.data.get('guest_can_pause')
             votes_to_skip = serializer.data.get('votes_to_skip')
             code = serializer.data.get('code')
 
             queryset = Room.objects.filter(code=code)
             if not queryset.exists():
                 return Response({'Message':'Room not Found'}, status=status.HTTP_404_NOT_FOUND)
+                
             room = queryset[0]
             user_id = self.request.session.session_key
 
@@ -137,6 +140,6 @@ class UpdateRoom(APIView):
             room.save(update_fields=['guest_can_pause', 'votes_to_skip'])
             return Response(RoomSerializer(room).data, status=status.HTTP_200_OK)
 
-        return Response({'bad Request': 'Invalid data'}, status=status.HTTP_400_BAD_REQUEST)
+        return Response({'Bad Request': 'Invalid data'}, status=status.HTTP_400_BAD_REQUEST)
 
-
+        

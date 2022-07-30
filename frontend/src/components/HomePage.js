@@ -3,7 +3,15 @@ import {BrowserRouter as Router, Route, Switch, Link, Redirect} from "react-rout
 import CreateRoomPage from './CreateRoomPage';
 import Room from './Room';
 import RoomJoinPage from './RoomJoinPage';
-import {Grid, Button, ButtonGroup, Typography} from '@material-ui/core'
+import {Grid, Button, ButtonGroup, Typography, ThemeProvider, createTheme} from '@material-ui/core'
+import { blueGrey, green , lightBlue, lightGreen, purple } from '@material-ui/core/colors';
+
+const theme = createTheme({
+  palette: {
+    primary: blueGrey,
+    secondary: lightBlue,
+  }
+})
 
 class HomePage extends Component {
   constructor(props) {
@@ -27,6 +35,7 @@ class HomePage extends Component {
 
   renderHomePage(){
     return(
+      <ThemeProvider theme={theme}>
       <Grid container spacing={3} align='center'>
         <Grid item xs={12}>
           <Typography variant='h3' compact='h3'>
@@ -34,12 +43,34 @@ class HomePage extends Component {
           </Typography>
         </Grid>
         <Grid item xs={12}>
-            <ButtonGroup disableElevation variant='contained' color='primary'>
-              <Button color='primary' to='/join' component={ Link }>Join A Room</Button>
-              <Button color='secondary' to='/create' component={ Link }>Create A Room</Button>
-            </ButtonGroup>
+           
+            <Grid item xs={12} align="center">
+            
+                <Button
+                color='primary'
+                 variant="contained"
+                  to='/join'  
+                  component={ Link }
+                  >
+                    Join A Room
+                  </Button>
+                
+            </Grid>
+              <br/>
+            <Grid item xs={12} align="center">
+                <Button
+                color='secondary'
+                variant="contained"
+                to='/create' 
+                component={Link}
+                 >
+                  Create A Room
+                  </Button>
+            </Grid>
+            
         </Grid>
       </Grid>
+      </ThemeProvider>
     )
   }
 
@@ -51,7 +82,7 @@ class HomePage extends Component {
 
   render() {
     return (
-      
+      <ThemeProvider theme={theme}>
       <Router>
         <Switch>
           <Route exact path='/'  render={() => {
@@ -72,7 +103,7 @@ class HomePage extends Component {
         
         </Switch>
       </Router>
-      
+      </ThemeProvider>
     )
   }
 }

@@ -3,7 +3,13 @@ body {
   height: 100%;
   margin: 0;
   padding: 0;
-  background-color: aqua;
+  /* background: rgb(58,56,100); */
+  background: linear-gradient(90deg,
+  rgb(20, 12, 53)5%, 
+  rgb(33, 63, 69)35%,
+  rgb(50, 81, 89)85%,
+  rgb(3, 34, 84)100%);
+
 }
 
 #main {
