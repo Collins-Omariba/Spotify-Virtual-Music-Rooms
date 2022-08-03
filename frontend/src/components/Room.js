@@ -82,7 +82,11 @@ class Room extends Component {
          return response.json()
         }
       })
-      .then((data) => this.setState({song: data}))
+      .then((data) => {
+        
+        this.setState({song: data})
+        console.log(data)
+      })
     }
   
     leaveButtonPressed() {
@@ -146,8 +150,8 @@ class Room extends Component {
     return (
       <Grid container spacing={1}>
         <Grid item xs={12} align="center">
-          <Typography variant="h4" component="h4">
-           Room Code: {this.roomCode}
+          <Typography  variant="h4" component="h4">
+           ROOM CODE: {this.roomCode}
           </Typography>
         </Grid>
 
@@ -161,7 +165,7 @@ class Room extends Component {
             color="secondary"
             onClick={this.leaveButtonPressed}
           >
-            Leave The Room
+            LEAVE ROOM
           </Button>
         </Grid>
       </Grid>
