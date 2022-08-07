@@ -5,6 +5,7 @@ import Room from './Room';
 import RoomJoinPage from './RoomJoinPage';
 import {Grid, Button, ButtonGroup, Typography, ThemeProvider, createTheme} from '@material-ui/core'
 import { blueGrey, green , lightBlue, lightGreen, purple } from '@material-ui/core/colors';
+import Info from './Info';
 
 const theme = createTheme({
   palette: {
@@ -45,6 +46,18 @@ class HomePage extends Component {
         <Grid item xs={12}>
            
             <Grid item xs={12} align="center">
+                <Button
+                color='default'
+                variant="contained"
+                to='/info' 
+                component={Link}
+                 >
+                  INFO
+                  </Button>
+            </Grid>
+            <br/>
+
+            <Grid item xs={12} align="center">
             
                 <Button
                 color='primary'
@@ -56,7 +69,10 @@ class HomePage extends Component {
                   </Button>
                 
             </Grid>
-              <br/>
+            <br/>
+
+            
+
             <Grid item xs={12} align="center">
                 <Button
                 color='secondary'
@@ -89,9 +105,10 @@ class HomePage extends Component {
             return this.state.roomCode ? (< Redirect to ={ `/room/${this.state.roomCode}`}/>) : this.renderHomePage()
           }}/>
             
+         
 
           <Route path='/create' component={CreateRoomPage}></Route>
-      
+          <Route path='/info' component={Info}></Route>
           <Route path='/join' component={RoomJoinPage}></Route>
 
           <Route
