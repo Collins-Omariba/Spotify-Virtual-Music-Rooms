@@ -44,7 +44,7 @@ class MusicPlayer extends Component {
       <Card>
         <Grid container alignItems='center'>
             <Grid item align='center' xs={4}>
-                <img src={this.props.image_url} height='100%' width='100%' />
+                <img src={this.props.image_url} alt={"NO SONG TO PLAY !!"} height='100%' width='100%' />
 
             </Grid>
 
@@ -66,9 +66,9 @@ class MusicPlayer extends Component {
                     >
                         {this.props.is_playing ? <Pause/> : <PlayArrow/>}
                     </IconButton>
-                    <IconButton onClick={() =>this.skipSong() }>
+                    <IconButton onClick={() => this.skipSong() }>
 
-                        {this.props.votes} / {" "} {this.props.votes_required}
+                        {this.props.votes} / {this.props.votes_required}
                         <SkipNext />
                        
                     </IconButton>
