@@ -43,7 +43,7 @@ cd frontend
 ```
 Then install all dependicies.
 ```bash
-npm i
+npm install
 ```
 
 ### Compile the Front-End
@@ -55,4 +55,9 @@ npm run build
 or for development:
 ```bash
 npm run dev
+```
+### View Web app on a browser
+Go to 
+```bash
+http://127.0.0.1:8000/
 ```
