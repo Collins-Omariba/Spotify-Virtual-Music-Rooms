@@ -10,9 +10,19 @@ It can be used in e.g. parties
 ```bash
 pip install -r requirements.txt
 ```
-### Start Web Server
+### Setup environment variables
 
-To start the web server you need to run the following sequence of commands.
+Use the .env-sample files in the
+Spotify and music_control directories and create a
+.env file in the same directories.
+
+Inorder to use Spotify API , create an app
+on Spotify in the developer dashboard
+, then fill in the SPOTIFY_CLIENT_KEY, 
+SPOTIFY_CLIENT_ID , SPOTIFY_REDIRECT_URI 
+from the app.
+
+### Start Web Server
 
 First cd into the music_ontrol project directory
 ```bash 
@@ -33,7 +43,7 @@ cd frontend
 ```
 Then install all dependicies.
 ```bash
-npm i
+npm install
 ```
 
 ### Compile the Front-End
@@ -45,4 +55,9 @@ npm run build
 or for development:
 ```bash
 npm run dev
+```
+### View Web app on a browser
+Go to 
+```bash
+http://127.0.0.1:8000/
 ```
