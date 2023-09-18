@@ -1,8 +1,14 @@
-# music_control
+# Spotify virtual music rooms
 
 A  music collaboration web app that allows users in a virtual room to control music from a single spotify account.
 It can be used in e.g. parties 
 , It is made using React for the frontend and Django for the backend 
+
+## APP Screenshots
+
+![Alt text](app_screenshots/musify_home.png)  ![Alt text](app_screenshots/musify_create_room.png)  <br>
+![Alt text](app_screenshots/musify_join_room.png) 
+![Alt text](app_screenshots/musify_music_playing.png) 
 ## Instructions on how to setup
 
 ### Install the  Required Python Modules
