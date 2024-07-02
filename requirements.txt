@@ -7,7 +7,7 @@ django-rest-framework==0.1.0
 djangorestframework==3.15.2
 idna==3.3
 pytz==2022.1
-requests==2.31.0
+requests==2.32.2
 sqlparse==0.5.0
 tzdata==2022.1
 urllib3==1.26.19
